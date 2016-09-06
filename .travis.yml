@@ -3,8 +3,15 @@ node_js: node
 services:
 - mongodb
 addons:
-    apt:
-        sources:
-        - mongodb-3.2-precise
-        packages:
-        - mongodb-org-server
+  apt:
+    sources:
+    - mongodb-3.2-precise
+    packages:
+    - mongodb-org-server
+deploy:
+  provider: heroku
+  api_key:
+    secure: bdcgwvrzgbaFFAerD2+3TBZqs7cCk8umzd9FjaVBH98mJnu2DVu3l/ombMCxN513N3aa/3spu9YEXISALkikq2SkYhXLPXj2V1PuOaCT2dk/7dqsrozho6bdhv1buKOVwGPVIEWIqjGki11UoY+vShoGZbt2AwURZF29ka1AhUpyaExL4SJ//mXhsdYWi4cIX/ruzdZ26yWutT3YAlR0GVJSpYKEmdo4an9FqufLzL83YRBkHCRZNZ641rDk89PGFLYM4/Nwsq6kFSVvGRdJP2Gksn8JikBe96trifFmms6lWJIa6FpT6LrAwE/UCrBAuKZMcfvShp9eNrQwNqG0IVV+p02Kz4QXnAeJILVaqvFwH6l4P0cOKCotJ7UVDNSRrp7vG/7H4bhvy4SNqpVpSSWQD/3Ejgod5Q4FrXaObRO7B635gm88Y4BMmmGW0nv7SODslagUYO0BdjGGwklaehAHhJa4SFqErF7K38q2nJoQ/ZPPmq8eA0ziQqqkKKVN4SBBX7vs70Il21t87G7mp5mw2KFO1RkAfcn3t8mae3DKkiXjdRI4lCGwGcqgqjwGFfT3vxTvFpYuKx96jNqHhpJtnzPxxDsU3f+TDfcmGxbBXm556AzPryJL8Y0lnUyAaFnFznvuflq1vKWhkcYd7xxws75thIWq+XQ2JfECG/g=
+  app: gentle-wave-40095
+  on:
+    repo: Ryca77/shopping-list-mongo
