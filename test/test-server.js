@@ -43,6 +43,24 @@ describe('Shopping List', function() {
             });
     });
     
+        after(function(done) {
+        Item.remove(function() {
+            done();
+        });
+    });
+});
+
+describe('Shopping List', function() {
+    before(function(done) {
+        server.runServer(function() {
+            Item.create({name: 'Broad beans'},
+                        {name: 'Tomatoes'},
+                        {name: 'Peppers'}, function() {
+                done();
+            });
+        });
+    });
+    
     it('should add an item on post', function(done) {
         chai.request(app)
             .post('/items')
@@ -69,6 +87,24 @@ describe('Shopping List', function() {
             });
     });
     
+    after(function(done) {
+        Item.remove(function() {
+            done();
+        });
+    });
+});
+    
+describe('Shopping List', function() {
+    before(function(done) {
+        server.runServer(function() {
+            Item.create({name: 'Broad beans'},
+                        {name: 'Tomatoes'},
+                        {name: 'Peppers'}, function() {
+                done();
+            });
+        });
+    });
+
     it('should edit an item on put', function(done) {
         chai.request(app)
             .get('/items')
@@ -100,6 +136,24 @@ describe('Shopping List', function() {
             });
     });
     
+    after(function(done) {
+        Item.remove(function() {
+            done();
+        });
+    });
+});
+
+describe('Shopping List', function() {
+    before(function(done) {
+        server.runServer(function() {
+            Item.create({name: 'Broad beans'},
+                        {name: 'Tomatoes'},
+                        {name: 'Peppers'}, function() {
+                done();
+            });
+        });
+    });
+
     it('should delete an item on delete', function(done) {
         chai.request(app)
             .get('/items')
@@ -149,7 +203,7 @@ describe('Shopping List', function() {
                 done()
             });
     });*/
-    
+
     after(function(done) {
         Item.remove(function() {
             done();
